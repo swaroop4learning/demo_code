@@ -1,0 +1,9 @@
+policy_name: Insurance Compliance Policy
+performance_metric: Precision
+trust_scores:
+  performance_score: 80
+  explainability_score: 95
+  robustness_score : 90
+  drift_sustainability_score: 90
+  fairness_score: 90
+trust_score_evaluation: average

@@ -1,0 +1,44 @@
+db_path: ./data/db.json
+validation_raw_path: ./Train_Data.pkl
+train_raw_path: ./Val_Data.pkl
+validation_generated_values_collection: predictions_values_counterfactuals
+live_data_path: ./Live_Data
+live_prediction_values_collection: live_predictions
+feature_attribution_aggregated_values_collection: feature_attribution_aggregated_values
+train_feature_attribution_generated_values_collection: feature_attribution_values_train
+train_feature_attribution_aggregated_values_collection: feature_attribution_values_train_aggregated
+validation_feature_attribution_generated_values_collection: feature_attribution_values_validation
+validation_feature_attribution_aggregated_values_collection: feature_attribution_values_validation_aggregated
+performance_generated_values_collection: performance_values
+prediction_model_path: ./iris_mlp.sav
+target_label_column: Species
+probability_threshold:
+id_column:
+pipeline_predictor: LR
+pipeline_transformer: PP
+model_type: Pipeline-Tree
+shap_method: Mean
+performance_metric: F1 Score
+explainer_dump_path: ./explain_pickle_path/wine_explainer_xgboost.pkl
+categorical_features_indexes:
+  -
+feature_names:
+  - 'SepalLengthCm'
+  - 'SepalWidthCm'
+  - 'PetalLengthCm'
+  - 'PetalWidthCm'
+target_classes:
+  species1: 0
+  species2: 1
+  species3: 2
+
+protected_attributes:
+  -
+protected_attributes_mappings: # protected attribute definitions, if applicable
+  -
+protected_feature_combinations: # protected feature combination definitions, if applicable
+  -
+prefered_class:
+fairness_score_collection: ff
+fairness_metric: Synthetic Flip Test #fairness score calculation method. Options Include:Synthetic Disparate Impact,Synthetic Flip Test
+problem_type: multiclass

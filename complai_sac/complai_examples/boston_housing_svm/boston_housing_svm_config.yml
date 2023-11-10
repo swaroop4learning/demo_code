@@ -1,0 +1,50 @@
+validation_raw_path: ./Val_Data.pkl
+train_raw_path: ./Train_Data.pkl
+db_path: ./data/db.json
+validation_generated_values_collection : predictions_values_counterfactuals
+feature_attribution_aggregated_values_collection: feature_attribution_aggregated_values
+train_feature_attribution_generated_values_collection: feature_attribution_values_train
+validation_feature_attribution_generated_values_collection: feature_attribution_values_validation
+validation_feature_attribution_aggregated_values_collection: feature_attribution_values_validation_aggregated
+live_prediction_values_collection: live_predictions
+train_feature_attribution_aggregated_values_collection: feature_attribution_values_train_aggregated
+performance_generated_values_collection: performance_values
+prediction_model_path: ./boston_svm.dat
+target_label_column: Prices
+target_classes : # target classes , not applicable for regression problems
+regression_threshold: 3
+prefered_class_lower_limit: 10
+prefered_class_upper_limit: 20
+live_data_path: ./Live_Data
+id_column:
+shap_method: Mean
+pipeline_predictor:
+pipeline_transformer:
+model_type:
+explainer_dump_path: ./explain_pickle_path/housing_explainer_xgboost.pkl
+categorical_features_indexes:
+  -
+feature_names:
+  - 'CRIM'
+  - 'ZN'
+  - 'INDUS'
+  - 'CHAS'
+  - 'NOX'
+  - 'RM'
+  - 'AGE'
+  - 'DIS'
+  - 'RAD'
+  - 'TAX'
+  - 'PTRATIO'
+  - 'B'
+  - 'LSTAT'
+protected_attributes:
+  -
+protected_attributes_mappings: # protected attribute definitions, if applicable
+  -
+protected_feature_combinations: # protected feature combination definitions, if applicable
+  -
+prefered_class:
+fairness_score_collection:
+problem_type: "regression"
+fairness_metric: Synthetic Flip Test

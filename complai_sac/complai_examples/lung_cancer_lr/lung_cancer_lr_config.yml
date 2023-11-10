@@ -1,0 +1,66 @@
+db_path: ./data/db.json
+validation_raw_path: ./val_lung_cancer.pkl
+train_raw_path: ./train_lung_cancer.pkl
+live_data_path: ./Live_Data
+counterfactuals_path: ./hosp_lr_counterfactuals.csv
+validation_generated_values_collection: predictions_values_counterfactuals
+live_prediction_values_collection: live_predictions
+feature_attribution_aggregated_values_collection: feature_attribution_aggregated_values
+train_feature_attribution_generated_values_collection: feature_attribution_values_train
+train_feature_attribution_aggregated_values_collection: feature_attribution_values_train_aggregated
+validation_feature_attribution_generated_values_collection: feature_attribution_values_validation
+validation_feature_attribution_aggregated_values_collection: feature_attribution_values_validation_aggregated
+performance_generated_values_collection: performance_values
+prediction_model_path: ./lung_cancer_lr.sav
+problem_type: binary
+target_label_column: target
+target_class_definitions: 
+  - 'Not_Detected'
+  - 'Detected'
+target_classes:
+  Not_Detected: 0
+  Detected: 1
+probability_threshold: 0.5
+id_column:
+shap_method:
+pipeline_predictor:
+pipeline_transformer:
+model_type: Linear
+performance_metric: Recall
+explainer_dump_path: ./explain_pickle_path/diabetes_explainer.pkl
+categorical_features_indexes:
+  - 0
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+feature_names:
+  - 'GENDER'
+  - 'AGE'
+  - 'SMOKING'
+  - 'YELLOW_FINGERS'
+  - 'ANXIETY'
+  - 'FATIGUE'
+  - 'WHEEZING'
+  - 'ALCOHOL CONSUMING'
+  - 'COUGHING'
+  - 'SHORTNESS OF BREATH'
+  - 'SWALLOWING DIFFICULTY'
+  - 'CHEST PAIN'
+
+protected_attributes: 
+  - 'GENDER'
+protected_attributes_mappings: # protected attribute definitions, if applicable
+  GENDER:
+    male: 1
+    female: 0
+protected_feature_combinations: # protected feature combination definitions, if applicable
+prefered_class: 0
+fairness_score_collection: fairness_values
+fairness_metric: Synthetic Flip Test

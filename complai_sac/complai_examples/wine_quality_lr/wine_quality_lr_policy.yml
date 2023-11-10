@@ -1,0 +1,8 @@
+policy_name: Wine Quality Compliance Policy
+trust_scores:
+  performance_score: 80
+  explainability_score: 95
+  robustness_score : 90
+  drift_sustainability_score: 
+  fairness_score:
+trust_score_evaluation: average
