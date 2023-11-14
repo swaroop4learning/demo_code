@@ -1,0 +1,70 @@
+experiment : bank_marketing
+test_size : 0.2
+rand_state : 42
+n_estimators: 100
+learning_rate: 0.07
+gamma: 0.1
+subsample: 0.77
+colsample_bytree: 1
+max_depth: 2
+db_path: ./db.json
+validation_generated_values_collection: predictions_values_counterfactuals
+live_prediction_values_collection: live_predictions
+feature_attribution_aggregated_values_collection: feature_attribution_aggregated_values
+train_feature_attribution_generated_values_collection: feature_attribution_values_train
+train_feature_attribution_aggregated_values_collection: feature_attribution_values_train_aggregated
+validation_feature_attribution_generated_values_collection: feature_attribution_values_validation
+validation_feature_attribution_aggregated_values_collection: feature_attribution_values_validation_aggregated
+performance_generated_values_collection: performance_values
+problem_type: binary
+target_label_column: target
+target_class_definitions: 
+  - 'NOT_DEPOSIT'
+  - 'DEPOSIT'
+target_classes:
+  NOT_DEPOSIT: 0
+  DEPOSIT: 1
+probability_threshold: 0.5
+id_column:
+shap_method:
+pipeline_predictor:
+pipeline_transformer:
+model_type: Linear
+performance_metric: F1 Score
+categorical_features_indexes:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 6
+  - 7
+  - 8
+  - 10
+  - 12
+feature_names:
+  - 'age'
+  - 'job'
+  - 'marital'
+  - 'education'
+  - 'default'
+  - 'balance'
+  - 'housing'
+  - 'loan'
+  - 'contact'
+  - 'day'
+  - 'month'
+  - 'duration'
+  - 'poutcome'
+  - 'campaign_cleaned'
+  - 'previous_cleaned'
+protected_attributes: 
+  - 'marital'
+protected_attributes_mappings: # protected attribute definitions, if applicable
+  marital:
+    married: 1
+    single: 2
+    divorced: 3
+protected_feature_combinations: # protected feature combination definitions, if applicable
+prefered_class: 1
+fairness_score_collection: fairness_values
+fairness_metric: Synthetic Flip Test
